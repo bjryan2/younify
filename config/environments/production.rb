@@ -45,6 +45,9 @@ Ica::Application.configure do
   # Set to :debug to see everything in the log.
   config.log_level = :info
 
+  config.action_mailer.delivery_method = :simple_postmark
+  config.action_mailer.simple_postmark_settings = { api_key: 'ba9c582d-85ac-4c42-8ca2-fc2588ffc6c6' }
+
   # Prepend all log lines with the following tags.
   # config.log_tags = [ :subdomain, :uuid ]
 

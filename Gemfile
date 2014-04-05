@@ -30,10 +30,17 @@ gem 'jbuilder', '~> 1.2'
 gem 'devise'
 
 #transactional email
-gem 'postmark'
+group :production do
+  gem 'postmark'
+end
 
 group :development, :production do
   gem 'mysql2'
+end
+
+group :development, :test do
+  #local mailer viewer
+  gem "letter_opener"
 end
 
 group :test do
