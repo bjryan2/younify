@@ -7,7 +7,11 @@
 
 // Include some nice mixins
 @import "compass/css3";
-//@import "sassy-buttons";
+@import "bootstrap";
 
 // Example: import partial stylesheet named "_users.scss"
 @import "overrides";
+@import "theme";
+@import "landing";
+@import "navbar";
+@import "footer";
