@@ -45,8 +45,8 @@ Ica::Application.configure do
   # Set to :debug to see everything in the log.
   config.log_level = :info
 
-  config.action_mailer.delivery_method = :simple_postmark
-  config.action_mailer.simple_postmark_settings = { api_key: 'ba9c582d-85ac-4c42-8ca2-fc2588ffc6c6' }
+  config.action_mailer.delivery_method = :postmark
+  config.action_mailer.postmark_settings = { api_key: 'ba9c582d-85ac-4c42-8ca2-fc2588ffc6c6' }
   config.action_mailer.default_url_options = { :host => '69.175.64.178' }
 
   # Prepend all log lines with the following tags.

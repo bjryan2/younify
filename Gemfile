@@ -32,7 +32,7 @@ gem 'omniauth-linkedin'
 
 #transactional email
 group :production do
-  gem 'postmark'
+  gem 'postmark-rails'
   gem 'unicorn'
 end
 
