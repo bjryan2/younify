@@ -15,6 +15,13 @@ $logo-green: #39b54a;
   user-select:none;
   animation:fly-in-from-left .5s 1s ease both;
   transform-origin:top left;
+
+
+
+  &.card-info{
+    text-align: left;
+  }
+
 }
 
 
@@ -193,5 +200,12 @@ textarea.message-box{
   height: 450px;
 }
 
+.education-list{
+  list-style: none;
+  margin: 10px 0;
+  padding: 25px;
+  li {
+    padding: 5px;
 
-
+  }
+}

@@ -4,7 +4,7 @@ ready = function() {
  $('#tokenfield').tokenfield({});
 
  $('#tokenfield-profile').tokenfield({
-  tokens: ['Google', 'Facebook', 'Apple', 'Coinbase', 'Snapchat'],
+  tokens: ['Google', 'Facebook', 'Apple', 'Coinbase'],
   limit: 5
  });
 
@@ -37,5 +37,4 @@ $('.edu-text').editable('http://www.example.com/save.php', {
 
 };
 
-$(document).ready(ready);
 $(document).on('page:load', ready);
