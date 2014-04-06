@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140406062436) do
+ActiveRecord::Schema.define(version: 20140406070146) do
 
   create_table "imported_connection_bases", force: true do |t|
     t.integer  "user_id"
@@ -74,6 +74,11 @@ ActiveRecord::Schema.define(version: 20140406062436) do
     t.string   "provider"
     t.string   "uid"
     t.string   "image_url"
+    t.string   "biography"
+    t.string   "resume_file_name"
+    t.string   "resume_content_type"
+    t.integer  "resume_file_size"
+    t.datetime "resume_updated_at"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true

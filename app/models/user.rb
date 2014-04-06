@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
   has_many :match_base_question_responses
   has_many :match_base_questions, :through => :match_base_question_responses
 
+  has_attached_file :resume
+
   # Include default devise modules. Others available are:
   # :lockable, :timeoutable
   devise :database_authenticatable, :registerable,
