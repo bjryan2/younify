@@ -14,11 +14,16 @@ ready = function() {
 
   company_engine.initialize();
 
-  $('#tokenfield-typeahead').tokenfield({});
 
 
 
-  $('#tokenfield').tokenfield({});
+  $('#tokenfield')
+  .on('tokenfield:createtoken', function (e) {
+    $('div.row.connection').shuffle();
+  })
+  .tokenfield({});
+
+
 
   $('#tokenfield-profile').tokenfield({
     typeahead: {
@@ -29,14 +34,10 @@ ready = function() {
   });
 
   $('.fa-envelope-o.fa-2x').click(function(){
-
-
     var name = $(this).parent().parent().find('h4.name').text();
 
     $('#myModal h4').text("Send a Message to " + name);
     $('#myModal').modal();
-
-
   });
 
 //editable text form code
@@ -58,3 +59,31 @@ $('.edu-text').editable('http://www.example.com/save.php', {
 };
 
 $(document).on('page:load', ready);
+
+
+
+(function($){
+
+    $.fn.shuffle = function() {
+
+        var allElems = this.get(),
+            getRandom = function(max) {
+                return Math.floor(Math.random() * max);
+            },
+            shuffled = $.map(allElems, function(){
+                var random = getRandom(allElems.length),
+                    randEl = $(allElems[random]).clone(true)[0];
+                allElems.splice(random, 1);
+                return randEl;
+           });
+
+        this.each(function(i){
+            $(this).replaceWith($(shuffled[i]));
+        });
+
+        return $(shuffled);
+
+    };
+
+})(jQuery);
+
