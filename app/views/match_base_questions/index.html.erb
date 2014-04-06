@@ -1,0 +1,8 @@
+<h1>Question Index</h1>
+<p>Find me in app/views/match_base_question/index.html.erb</p>
+
+<%= link_to 'Add a question', new_match_base_question_path %>
+
+<% @questions.each do |q| %>
+  <h3><%= q.question %></h3>
+<% end %>

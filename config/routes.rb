@@ -10,6 +10,8 @@ Ica::Application.routes.draw do
     get 'dashboard'
   end
 
+  resources :match_base_questions, only: [:edit, :index, :create, :update, :new, :destroy]
+
   resources :landing, only: [:index]
 
   # The priority is based upon order of creation: first created -> highest priority.

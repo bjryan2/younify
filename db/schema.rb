@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140406070146) do
+ActiveRecord::Schema.define(version: 20140406082116) do
 
   create_table "imported_connection_bases", force: true do |t|
     t.integer  "user_id"
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 20140406070146) do
     t.integer  "match_base_question_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "answer"
   end
 
   create_table "match_base_questions", force: true do |t|
@@ -41,6 +42,15 @@ ActiveRecord::Schema.define(version: 20140406070146) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "recommenders", force: true do |t|
+    t.integer  "user_id"
+    t.string   "email"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "recommenders", ["user_id"], name: "index_recommenders_on_user_id"
 
   create_table "sessions", force: true do |t|
     t.string   "session_id", null: false
@@ -51,6 +61,18 @@ ActiveRecord::Schema.define(version: 20140406070146) do
 
   add_index "sessions", ["session_id"], name: "index_sessions_on_session_id", unique: true
   add_index "sessions", ["updated_at"], name: "index_sessions_on_updated_at"
+
+  create_table "user_recommendations", force: true do |t|
+    t.string   "content"
+    t.boolean  "positive_rec"
+    t.integer  "recommender_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "user_recommendations", ["recommender_id"], name: "index_user_recommendations_on_recommender_id"
+  add_index "user_recommendations", ["user_id"], name: "index_user_recommendations_on_user_id"
 
   create_table "users", force: true do |t|
     t.string   "first_name"

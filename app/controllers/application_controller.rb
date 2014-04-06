@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def authenticate_user!
+  def authenticate!
     if current_user
       return
     else
