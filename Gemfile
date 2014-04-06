@@ -34,9 +34,10 @@ gem 'omniauth-linkedin'
 group :production do
   gem 'postmark-rails'
   gem 'unicorn'
+  gem 'pg'
 end
 
-group :development, :production do
+group :development do
   gem 'mysql2'
 end
 
