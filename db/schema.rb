@@ -11,7 +11,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140405193734) do
+ActiveRecord::Schema.define(version: 20140405215707) do
+
+  create_table "imported_connection_bases", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "imported_connection_entry_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "imported_connection_entries", force: true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "image_url"
+    t.string   "current_employer"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "match_base_question_responses", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "match_base_question_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "match_base_questions", force: true do |t|
+    t.string   "question"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "first_name"
@@ -28,6 +57,10 @@ ActiveRecord::Schema.define(version: 20140405193734) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.string   "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string   "unconfirmed_email"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

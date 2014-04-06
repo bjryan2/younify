@@ -10,6 +10,10 @@
 #   inflect.uncountable %w( fish sheep )
 # end
 
+ActiveSupport::Inflector.inflections do |inflect|
+  inflect.irregular 'base', 'bases' #lol how is "basis" the plural inflection of "base"?
+end
+
 # These inflection rules are supported but not enabled by default:
 # ActiveSupport::Inflector.inflections(:en) do |inflect|
 #   inflect.acronym 'RESTful'

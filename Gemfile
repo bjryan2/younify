@@ -5,12 +5,6 @@ gem 'rails', '4.0.0'
 
 # Use sqlite3 as the database for Active Record
 
-# Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.0'
-gem 'compass_twitter_bootstrap'
-gem 'compass-rails'
-gem 'bootstrap-sass', '~> 3.1.1'
-gem 'font-awesome-sass'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 
@@ -30,11 +24,11 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
 #authentication system
+gem 'omniauth'
 gem 'devise'
 ##oauth additions
 gem 'omniauth-facebook'
 gem 'omniauth-linkedin'
-
 
 #transactional email
 group :production do
@@ -58,6 +52,13 @@ group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
 end
+
+# Use SCSS for stylesheets
+gem 'sass-rails', '~> 4.0.0'
+gem 'compass_twitter_bootstrap'
+gem 'compass-rails'
+gem 'bootstrap-sass', '~> 3.1.1'
+gem 'font-awesome-sass'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
