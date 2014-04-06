@@ -18,38 +18,42 @@ ready = function() {
   company_engine.initialize();
 
 
-  if(! $('#tokenfield-tokenfield').length){
+  if(!$('#tokenfield-tokenfield').length && !$('.token-input').length){
 
    $('#tokenfield')
    .on('tokenfield:createtoken', function (e) {
-    $('div.row.connection').shuffle();
-  })
-   .tokenfield({});
+    //$('div.row.connection').shuffle();
 
-   $('#tokenfield-profile').tokenfield({
-    typeahead: {
-      source: company_engine.ttAdapter()
-    },
-    tokens: ['Google', 'Facebook', 'Apple', 'Coinbase'],
-    limit: 5
+    $('div.row.connection').filter(function(){
+      return $(this).find('p.title').text().toLowerCase().indexOf('software') === -1
+
+    }).fadeOut()
+  }).tokenfield({});
+
+    $('#tokenfield-profile').tokenfield({
+      typeahead: {
+        source: company_engine.ttAdapter()
+      },
+      tokens: ['Google', 'Facebook', 'Apple', 'Coinbase'],
+      limit: 5
+    });
+
+
+  }
+
+
+  $('.fa-envelope-o.fa-2x').click(function(){
+    var name = $(this).parent().parent().find('h4.name').text();
+
+    $('#myModal h4').text("Send a Message to " + name);
+    $('#myModal').modal();
   });
 
+  $('#sendMail').click(function(){
+    $('#myModal').modal('hide');
+    $('#successModal').modal();
 
- }
-
-
- $('.fa-envelope-o.fa-2x').click(function(){
-  var name = $(this).parent().parent().find('h4.name').text();
-
-  $('#myModal h4').text("Send a Message to " + name);
-  $('#myModal').modal();
-});
-
- $('#sendMail').click(function(){
-  $('#myModal').modal('hide');
-  $('#successModal').modal();
-
-});
+  });
 
 
 //editable text form code
@@ -96,6 +100,9 @@ $(document).on('ready', ready);
     return $(shuffled);
 
   };
+
+
+
 
 })(jQuery);
 
