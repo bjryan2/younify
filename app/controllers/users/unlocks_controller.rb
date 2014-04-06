@@ -1,4 +1,4 @@
-class Users::UnlocksController < Devise::UnblocksController
+class Users::UnlocksController < Devise::UnlocksController
   prepend_before_filter :require_no_authentication
 
   # GET /resource/unlock/new
