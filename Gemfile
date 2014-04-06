@@ -29,13 +29,18 @@ gem 'devise'
 ##oauth additions
 gem 'omniauth-facebook'
 gem 'omniauth-linkedin'
+gem 'linkedin'
+
+gem 'activerecord-session_store', github: 'rails/activerecord-session_store'
 
 #transactional email
 group :production do
-  gem 'postmark'
+  gem 'postmark-rails'
+  gem 'unicorn'
+  gem 'pg'
 end
 
-group :development, :production do
+group :development do
   gem 'mysql2'
 end
 
@@ -64,7 +69,6 @@ gem 'font-awesome-sass'
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
 # Use unicorn as the app server
-# gem 'unicorn'
 
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
