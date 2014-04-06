@@ -1,0 +1,42 @@
+$mainRed : rgb(255, 45, 45);
+
+
+
+body{
+  background: #f8f8f8;
+  background-image: -webkit-linear-gradient(#fefefe,#f8f8f8);
+  background-image: -moz-linear-gradient(#fefefe,#f8f8f8);
+  background-image: -ms-linear-gradient(#fefefe,#f8f8f8);
+  background-image: -o-linear-gradient(#fefefe,#f8f8f8);
+  font-family: 'Open Sans',sans-serif !important;
+}
+
+
+.content{
+  text-align: center;
+}
+
+.fa-chain-broken{
+  color:red;
+  background: red;
+}
+
+.nav > li > a.rounded-highlight{
+
+ border-radius: 5px;
+ padding-top: 5px;
+ padding-bottom: 5px;
+ margin-top: 10px;
+ color: rgb(253, 253, 253);
+ margin-left: 10px;
+
+  &.red{
+     background-color: $mainRed;
+  }
+
+  &:hover{
+    color: rgb(253, 253, 253);
+    text-style: inherit;
+  }
+
+}
