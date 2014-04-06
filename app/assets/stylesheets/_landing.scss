@@ -47,11 +47,13 @@
 
 .btn-start{
 
+  height: 55px;
+  border-radius: 7.5px;
   margin: 0 auto;
   background-color: #42a7f6;
-  width: 75%;
+  width: 100%;
   color: white;
-  border-color: rgb(110, 196, 255);
+  border-color: #6ec4ff;
 
   &:hover{
     background:color #259FF3;
