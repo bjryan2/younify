@@ -33,6 +33,7 @@ gem 'omniauth-linkedin'
 #transactional email
 group :production do
   gem 'postmark'
+  gem 'unicorn'
 end
 
 group :development, :production do
@@ -64,7 +65,6 @@ gem 'font-awesome-sass'
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
 # Use unicorn as the app server
-# gem 'unicorn'
 
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
