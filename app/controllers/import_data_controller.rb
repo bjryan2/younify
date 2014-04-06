@@ -4,7 +4,7 @@ class ImportDataController < ApplicationController
     @authenticated_info = User.init_importer
 
     respond_to do |format|
-      format.json render {:json => @authenticated_info}
+      format.html
     end
   end
 
