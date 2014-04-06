@@ -15,17 +15,17 @@ ready = function() {
   company_engine.initialize();
 
 
+  if(! $('#tokenfield-tokenfield').length){
 
-
-  $('#tokenfield')
-  .on('tokenfield:createtoken', function (e) {
+   $('#tokenfield')
+   .on('tokenfield:createtoken', function (e) {
     $('div.row.connection').shuffle();
   })
-  .tokenfield({});
+   .tokenfield({});
 
 
 
-  $('#tokenfield-profile').tokenfield({
+   $('#tokenfield-profile').tokenfield({
     typeahead: {
       source: company_engine.ttAdapter()
     },
@@ -33,12 +33,16 @@ ready = function() {
     limit: 5
   });
 
-  $('.fa-envelope-o.fa-2x').click(function(){
-    var name = $(this).parent().parent().find('h4.name').text();
 
-    $('#myModal h4').text("Send a Message to " + name);
-    $('#myModal').modal();
-  });
+ }
+
+
+ $('.fa-envelope-o.fa-2x').click(function(){
+  var name = $(this).parent().parent().find('h4.name').text();
+
+  $('#myModal h4').text("Send a Message to " + name);
+  $('#myModal').modal();
+});
 
 //editable text form code
 $('.bio-text').editable('http://www.example.com/save.php', {
@@ -59,31 +63,31 @@ $('.edu-text').editable('http://www.example.com/save.php', {
 };
 
 $(document).on('page:load', ready);
-
+$(document).on('ready', ready);
 
 
 (function($){
 
-    $.fn.shuffle = function() {
+  $.fn.shuffle = function() {
 
-        var allElems = this.get(),
-            getRandom = function(max) {
-                return Math.floor(Math.random() * max);
-            },
-            shuffled = $.map(allElems, function(){
-                var random = getRandom(allElems.length),
-                    randEl = $(allElems[random]).clone(true)[0];
-                allElems.splice(random, 1);
-                return randEl;
-           });
+    var allElems = this.get(),
+    getRandom = function(max) {
+      return Math.floor(Math.random() * max);
+    },
+    shuffled = $.map(allElems, function(){
+      var random = getRandom(allElems.length),
+      randEl = $(allElems[random]).clone(true)[0];
+      allElems.splice(random, 1);
+      return randEl;
+    });
 
-        this.each(function(i){
-            $(this).replaceWith($(shuffled[i]));
-        });
+    this.each(function(i){
+      $(this).replaceWith($(shuffled[i]));
+    });
 
-        return $(shuffled);
+    return $(shuffled);
 
-    };
+  };
 
 })(jQuery);
 
