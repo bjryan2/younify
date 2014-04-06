@@ -1,7 +1,10 @@
 class ImportDataController < ApplicationController
+  before_filter :authenticate_user!
 
   def request
-    @authenticated_info = User.init_importer
+    @authenticated_info = ImportedConnectionBase.request_data
+
+    puts(@authenticated_info)
 
     respond_to do |format|
       format.html
@@ -13,4 +16,5 @@ class ImportDataController < ApplicationController
       format.html
     end
   end
+
 end

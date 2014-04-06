@@ -1,3 +1,5 @@
+require 'open-uri'
+
 class User < ActiveRecord::Base
 
   has_many :imported_connection_bases
@@ -7,6 +9,11 @@ class User < ActiveRecord::Base
   has_many :match_base_questions, :through => :match_base_question_responses
 
   has_attached_file :resume
+  has_attached_file :avatar
+
+  after_create :set_avatar_from_url
+
+  validates_attachment :avatar, content_type: { content_type: ["image/jpg", "image/jpeg"] }
 
   validates_attachment :resume, content_type: { content_type: ["application/pdf", "application/doc", "application/docx", "text/plain"] }
 
@@ -15,6 +22,15 @@ class User < ActiveRecord::Base
   # :lockable, :timeoutable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable, :omniauth_providers => [:linkedin, :facebook]
+
+  def name
+    return self.first_name + ' ' + self.last_name
+  end
+
+  def set_avatar_from_url
+    self.avatar = open(self.image_url)
+    self.save!
+  end
 
   def self.new_with_session(params, session)
     super.tap do |user|
@@ -46,25 +62,6 @@ class User < ActiveRecord::Base
         user.last_name = auth.info.last_name   # assuming the user model has a name
         user.image_url = auth.info.image # assuming the user model has an image
     end
-  end
-
-  def self.init_importer
-    require 'linkedin'
-
-    client = LinkedIn::Client.new('75era6lidnw2rl', 'QL3I36ilvGiyGm2G')
-
-    request_token = client.request_token()
-    rtoken = request_token.token
-    rsecret = request_token.secret
-
-    authenticated_response = {
-                                                   rtoken: request_token.token,
-                                                    rsecret: request_token.secret,
-                                                    url: request_token.authorize_url
-                                                  }
-
-    return authenticated_response
-
   end
 
 end

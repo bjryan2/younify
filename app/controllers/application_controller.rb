@@ -6,15 +6,7 @@ class ApplicationController < ActionController::Base
 
   def update_sanitized_params
     devise_parameter_sanitizer.for(:account_update) do |u|
-      u.permit(:email, :password, :password_confirmation, :biography, :resume)
-    end
-  end
-
-  def authenticate_user!
-    if current_user
-      return
-    else
-      redirect_to landing_index_path, :flash => { :error => 'Please sign in to view this page' }
+      u.permit(:email, :password, :password_confirmation, :biography, :resume, :avatar)
     end
   end
 
