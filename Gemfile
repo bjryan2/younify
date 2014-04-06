@@ -33,6 +33,9 @@ gem 'linkedin'
 
 gem 'activerecord-session_store', github: 'rails/activerecord-session_store'
 
+#file attachments
+gem 'paperclip'
+
 #transactional email
 group :production do
   gem 'postmark-rails'
