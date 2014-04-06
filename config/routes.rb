@@ -10,6 +10,12 @@ Ica::Application.routes.draw do
     get 'dashboard'
   end
 
+  resource :import_data, only: [:show] do
+    get 'request'
+    get 'complete'
+  end
+
+
   resources :landing, only: [:index]
 
   # The priority is based upon order of creation: first created -> highest priority.

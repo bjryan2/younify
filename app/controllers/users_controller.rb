@@ -18,7 +18,7 @@ private
 
   def check_user
     if !current_user
-      redirect_to landing_path, :flash => { :error => 'Please sign in to view this page' }
+      redirect_to landing_index_path, :flash => { :error => 'Please sign in to view this page' }
     else
       return
     end

@@ -43,4 +43,23 @@ class User < ActiveRecord::Base
     end
   end
 
+  def self.init_importer
+    require 'linkedin'
+
+    client = LinkedIn::Client.new('75era6lidnw2rl', 'QL3I36ilvGiyGm2G')
+
+    request_token = client.request_token()
+    rtoken = request_token.token
+    rsecret = request_token.secret
+
+    authenticated_response = {
+                                                   rtoken: request_token.token,
+                                                    rsecret: request_token.secret,
+                                                    url: request_token.authorize_url
+                                                  }
+
+    return authenticated_response
+
+  end
+
 end
