@@ -31,6 +31,10 @@ gem 'jbuilder', '~> 1.2'
 
 #authentication system
 gem 'devise'
+##oauth additions
+gem 'omniauth-facebook'
+gem 'omniauth-linkedin'
+
 
 #transactional email
 group :production do
