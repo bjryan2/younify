@@ -1,4 +1,5 @@
 var ready;
+
 ready = function() {
  $('#tokenfield')
   .on('tokenfield:preparetoken', function (e) {
@@ -6,11 +7,11 @@ ready = function() {
     var classes = ['red', 'blue', 'teal', 'green'];
 
     var str = classes[Math.floor(Math.random()*classes.length)];
-    
+
     //console.log(e.relatedTarget);
     //console.log(e);
     $('#tokenfield').children('.token').last().addClass(str);
-  })
+  }).tokenfield({});
  $('.fa-envelope-o.fa-2x').click(function(){
     $('#myModal').modal();
   });
