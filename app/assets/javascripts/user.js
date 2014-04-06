@@ -3,9 +3,13 @@ var ready;
 ready = function() {
  $('#tokenfield').tokenfield({});
 
+ $('#tokenfield-profile').tokenfield({});
  $('.fa-envelope-o.fa-2x').click(function(){
   $('#myModal').modal();
 });
+
+
+
 
 
 //editable text form code
