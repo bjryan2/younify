@@ -20,6 +20,7 @@ $logo-green: #39b54a;
 
 .profile-image{
 
+
   &.profile-image-small{
 
     display: block;
@@ -33,8 +34,10 @@ $logo-green: #39b54a;
     -moz-border-radius: 99em;
     border-radius: 99em;
     border: 1px solid #eee;
-    box-shadow: 0 3px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
   }
+
+
 }
 
 
