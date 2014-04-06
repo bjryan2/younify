@@ -87,6 +87,10 @@ $logo-green: #39b54a;
   }
 
   color: $logo-blue;
+
+  &:hover{
+    color: $logo-green;
+  }
 }
 
 .search-bar{
