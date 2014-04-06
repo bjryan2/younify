@@ -34,7 +34,7 @@ ready = function() {
       typeahead: {
         source: company_engine.ttAdapter()
       },
-      tokens: ['Google', 'Facebook', 'Apple', 'Coinbase'],
+      tokens: ['Motorola', 'Facebook', 'Braintree', 'Coinbase'],
       limit: 5
     });
 
