@@ -1,4 +1,7 @@
-$mainRed : rgb(255, 45, 45);
+$logo-blue:  #42a7f6;
+$logo-green: #39b54a;
+
+
 
 
 
@@ -31,7 +34,7 @@ body{
  margin-left: 10px;
 
   &.red{
-     background-color: $mainRed;
+     background-color: $logo-blue;
   }
 
   &:hover{

@@ -14,5 +14,8 @@
 //= require jquery_ujs
 //= require turbolinks
 //=require bootstrap
+// require user
+// require landing
+// require script
 //= require_tree .
 //= require_tree ../../../vendor/assets/javascripts/.

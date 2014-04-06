@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_filter :check_user
+  layout "users"
 
   def profile
     respond_to do |format|

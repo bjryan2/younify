@@ -46,7 +46,19 @@
 }
 
 .btn-start{
+
+  height: 55px;
+  border-radius: 7.5px;
   margin: 0 auto;
-  background-color: $mainRed;
-  width: 75%;
+  background-color: #42a7f6;
+  width: 100%;
+  color: white;
+  border-color: #6ec4ff;
+
+  &:hover{
+    background:color #259FF3;
+    color: white;
+  }
 }
+
+
