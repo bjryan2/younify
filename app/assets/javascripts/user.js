@@ -4,7 +4,7 @@ ready = function() {
  $('#tokenfield').tokenfield({});
 
  $('#tokenfield-profile').tokenfield({
-  tokens: ['Google', 'Facebook', 'Apple', 'Coinbase'],
+  tokens: ['Google', 'Facebook', 'Apple', 'Coinbase', 'Snapchat'],
   limit: 5
  });
 
