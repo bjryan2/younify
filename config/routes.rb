@@ -4,6 +4,11 @@ Ica::Application.routes.draw do
 
   root 'passthrough#authenticate'
 
+  resources :users, only: [:show] do
+    get 'profile'
+    get 'dashboard'
+  end
+
   resources :landing, only: [:index]
   resources :home, only: [:index]
 
