@@ -4,6 +4,9 @@ var ready;
 ready = function() {
 
 
+
+
+
   var company_engine = new Bloodhound({
     local: [{value: 'Coinbase'}, {value: 'Apple'}, {value: 'Google'} , {value: 'Facebook'}, {value: 'Belly'}, {value: 'Blotcher'}, {value: 'Snapchat'}, {value: 'Tinder'}, {value: 'Firebase'}],
     datumTokenizer: function(d) {
@@ -23,8 +26,6 @@ ready = function() {
   })
    .tokenfield({});
 
-
-
    $('#tokenfield-profile').tokenfield({
     typeahead: {
       source: company_engine.ttAdapter()
@@ -43,6 +44,13 @@ ready = function() {
   $('#myModal h4').text("Send a Message to " + name);
   $('#myModal').modal();
 });
+
+ $('#sendMail').click(function(){
+  $('#myModal').modal('hide');
+  $('#successModal').modal();
+
+});
+
 
 //editable text form code
 $('.bio-text').editable('http://www.example.com/save.php', {
