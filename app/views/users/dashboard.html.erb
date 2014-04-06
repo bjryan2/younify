@@ -1,14 +1,14 @@
 <article class="user-dash">
-  <section class="row search-bar">
-    <h4>Searched Tags:</h4>
+  <section class="row search-bar card">
     <div class="tag-container">
-      <input type="text" name="tags" placeholder="Tags" class="tm-input"/>
+      <input type="text" id="tokenfield" name="tags" placeholder="" class="tm-input"/>
     </div>
   </section>
 
   <section class="row card search-results">
-    <div class="connections-wrapper col-md-10">
-      <div class="row connection-wrapper">
+    <div class="connections-wrapper col-md-12">
+
+      <div class="connection  row connection">
         <div class="col-md-2 col-md-offset-1">
           <%= image_tag "person.jpg", :class => "profile-image profile-image-small" %>
         </div>
@@ -20,10 +20,37 @@
           <i class="fa fa-envelope-o fa-2x"></i>
         </div>
       </div>
+
+
+
+      <div class="connection  row connection">
+        <div class="col-md-2 col-md-offset-1">
+          <%= image_tag "person.jpg", :class => "profile-image profile-image-small" %>
+        </div>
+        <div class="col-md-6 col-md-offset-1">
+          <h4 class="name">Jenny Murphy</h4>
+          <p class="title"><b>Software Engineer</b> - Google</p>
+        </div>
+        <div class="col-md-1 col-md-offset-1">
+          <i class="fa fa-envelope-o fa-2x"></i>
+        </div>
+      </div>
+
+
+      <div class="connection  row connection">
+        <div class="col-md-2 col-md-offset-1">
+          <%= image_tag "person.jpg", :class => "profile-image profile-image-small" %>
+        </div>
+        <div class="col-md-6 col-md-offset-1">
+          <h4 class="name">Jenny Murphy</h4>
+          <p class="title"><b>Software Engineer</b> - Google</p>
+        </div>
+        <div class="col-md-1 col-md-offset-1">
+          <i class="fa fa-envelope-o fa-2x"></i>
+        </div>
+      </div>
+
     </div>
-
-
-
   </section>
 
 </article>

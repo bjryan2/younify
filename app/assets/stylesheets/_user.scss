@@ -2,6 +2,8 @@
 $break-small: 320px;
 $break-large: 1200px;
 
+$logo-blue:  #42a7f6;
+$logo-green: #39b54a;
 
 
 .card{
@@ -62,7 +64,13 @@ $break-large: 1200px;
   }
 }
 
+.connection{
 
+  margin: 10px 0;
+  padding: 10px;
+  border-bottom: 1px solid rgb(231, 224, 224)
+
+}
 
 .fa-envelope-o{
 
@@ -75,5 +83,103 @@ $break-large: 1200px;
     margin-top: 35px;
   }
 
-  color: red;
+  color: $logo-blue;
 }
+
+.search-bar{
+
+
+  height: 100px;
+  text-align: left;
+
+  & > p {
+    font-size: 2.3rem;
+  }
+
+}
+
+
+.tag-container{
+
+  position: relative;
+  padding: 45px 15px 15px;
+  margin: 0 -15px 15px;
+  background-color: #fafafa;
+  border-color: #e5e5e5 #eee #eee;
+  border-style: solid;
+  border-width: 1px 0;
+  overflow: hidden;
+
+  &:before{
+    content: "Chosen Filters:";
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #bbb;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  input{
+
+    background: inherit;
+    border: none;
+
+    &:focus, &:active{
+      border: none;
+      outline: none;
+    }
+
+  }
+
+
+
+}
+.token {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  display: inline-block;
+  border: 1px solid #d9d9d9;
+  background-color: #ededed;
+  white-space: nowrap;
+  margin: -1px 5px 5px 0;
+  height: 22px;
+  vertical-align: top;
+  cursor: default;
+
+  &.token-label{
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-left: 4px;
+    vertical-align: top;
+  }
+
+
+
+  &.red{
+    background-color: #d9534f;
+  }
+
+  &.blue{
+    background-color: $logo-green;
+  }
+
+  &.teal{
+    background-color: #5bc0de;
+  }
+
+  &.green{
+    background-color: #5cb85c;
+  }
+}
+
+
+
+
