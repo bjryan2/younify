@@ -204,8 +204,29 @@ textarea.message-box{
   list-style: none;
   margin: 10px 0;
   padding: 25px;
+
   li {
     padding: 5px;
 
+  }
+}
+
+.modal-body{
+
+  &.success{
+    text-align: center;
+    i {
+      display: block;
+      color: $logo-blue;
+      margin: 10px auto;
+    }
+
+    h2 {
+      margin: 25px auto;
+    }
+
+    p {
+      padding: 10px;
+    }
   }
 }

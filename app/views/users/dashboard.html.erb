@@ -127,22 +127,21 @@
 
 <!-- Modal -->
 
-
 <div class="modal fade bs-example-modal-sm" id="successModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-sm">
+  <div class="modal-dialog">
     <div class="modal-content">
-      <div class="modal-body">
-        <p class="form-control message-box" rows="5">
-          Your message has been sent!
-        </p>
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
+      <div class="modal-body success">
 
-    </div>
-  </div>
-</div>
+        <i class="fa fa-inbox fa-4x"></i>
+        <h2>Congrats! Your Email was Sent!</h2>
+        <p>If all goes well we will reach out to you with your recommendation. In the meantime, feel free to return to the dashboard to explore more opportunities.</p>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 
 
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
