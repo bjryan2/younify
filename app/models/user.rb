@@ -8,6 +8,9 @@ class User < ActiveRecord::Base
 
   has_attached_file :resume
 
+  validates_attachment :resume, content_type: { content_type: ["application/pdf", "application/doc", "application/docx", "text/plain"] }
+
+
   # Include default devise modules. Others available are:
   # :lockable, :timeoutable
   devise :database_authenticatable, :registerable,
