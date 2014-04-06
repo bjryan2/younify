@@ -18,8 +18,6 @@
 /log/*.log
 /tmp
 
-#Ignore vector bundle
-/vendor/
 
 #Ignore precompiled assets
 /public/assets
