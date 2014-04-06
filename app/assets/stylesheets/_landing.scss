@@ -46,7 +46,17 @@
 }
 
 .btn-start{
+
   margin: 0 auto;
-  background-color: $logo-blue;
+  background-color: #42a7f6;
   width: 75%;
+  color: white;
+  border-color: rgb(110, 196, 255);
+
+  &:hover{
+    background:color #259FF3;
+    color: white;
+  }
 }
+
+
