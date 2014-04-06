@@ -11,8 +11,10 @@
 
         <%= image_tag "logo-clear.png", :class => "logo logo-small" %></a>
       <ul class="nav navbar-nav">
-        <li><a href="dashboard">Dashboard</a></li>
+       <% if user_signed_in? %>
+       <li><a href="dashboard">Dashboard</a></li>
         <li><a href="profile">Profile</a></li>
+        <% end %>
       </ul>
 
     </div>
