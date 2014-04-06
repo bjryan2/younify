@@ -29,6 +29,9 @@ gem 'devise'
 ##oauth additions
 gem 'omniauth-facebook'
 gem 'omniauth-linkedin'
+gem 'linkedin'
+
+gem 'activerecord-session_store', github: 'rails/activerecord-session_store'
 
 #transactional email
 group :production do

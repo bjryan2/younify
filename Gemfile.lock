@@ -1,3 +1,12 @@
+GIT
+  remote: git://github.com/rails/activerecord-session_store.git
+  revision: 55dc59aff9a1101c52004c0604bb88418624ba96
+  specs:
+    activerecord-session_store (0.1.0)
+      actionpack (>= 4.0.0, < 5)
+      activerecord (>= 4.0.0, < 5)
+      railties (>= 4.0.0, < 5)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -78,6 +87,10 @@ GEM
       addressable (~> 2.3)
     letter_opener (1.2.0)
       launchy (~> 2.2)
+    linkedin (0.4.6)
+      hashie (>= 1.2, < 2.1)
+      multi_json (~> 1.0)
+      oauth (~> 0.4)
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
@@ -180,6 +193,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activerecord-session_store!
   bootstrap-sass (~> 3.1.1)
   compass-rails
   compass_twitter_bootstrap
@@ -188,6 +202,7 @@ DEPENDENCIES
   jbuilder (~> 1.2)
   jquery-rails
   letter_opener
+  linkedin
   mysql2
   omniauth
   omniauth-facebook
