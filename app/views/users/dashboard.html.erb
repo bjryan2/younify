@@ -21,8 +21,6 @@
         </div>
       </div>
 
-
-
       <div class="connection  row connection">
         <div class="col-md-2 col-md-offset-1">
           <%= image_tag "person.jpg", :class => "profile-image profile-image-small" %>
@@ -36,7 +34,6 @@
         </div>
       </div>
 
-
       <div class="connection  row connection">
         <div class="col-md-2 col-md-offset-1">
           <%= image_tag "person.jpg", :class => "profile-image profile-image-small" %>
@@ -49,8 +46,26 @@
           <i class="fa fa-envelope-o fa-2x"></i>
         </div>
       </div>
-
     </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" id="myModalLabel">Send an email to Jenny Murphy</h4>
+          </div>
+          <div class="modal-body">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Send mail</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </section>
 
 </article>

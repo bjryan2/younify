@@ -1,5 +1,9 @@
 $(document).ready(function(){
 
+  $('.fa-envelope-o.fa-2x').click(function(){
+    $('#myModal').modal();
+  });
+
   $('#tokenfield')
   .on('tokenfield:preparetoken', function (e) {
     //cycle through classes for
@@ -10,6 +14,7 @@ $(document).ready(function(){
     console.log(e);
     $('#tokenfield').children('.token').last().addClass(str);
   })
+
   .tokenfield({
 
     allowDuplicates: false,
