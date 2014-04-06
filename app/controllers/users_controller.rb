@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_filter :check_user
+  before_filter :authenticate_user!
   layout "users"
 
   def profile
@@ -11,16 +11,6 @@ class UsersController < ApplicationController
   def dashboard
     respond_to do |format|
       format.html
-    end
-  end
-
-private
-
-  def check_user
-    if !current_user
-      redirect_to landing_index_path, :flash => { :error => 'Please sign in to view this page' }
-    else
-      return
     end
   end
 

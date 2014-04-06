@@ -87,12 +87,15 @@ $logo-green: #39b54a;
   }
 
   color: $logo-blue;
+
+  &:hover{
+    color: $logo-green;
+  }
 }
 
 .search-bar{
 
 
-  height: 100px;
   text-align: left;
 
   & > p {
@@ -106,14 +109,17 @@ $logo-green: #39b54a;
 
   position: relative;
   padding: 45px 15px 15px;
-  margin: 0 -15px 15px;
-  background-color: #fafafa;
   border-color: #e5e5e5 #eee #eee;
   border-style: solid;
   border-width: 1px 0;
   overflow: hidden;
+  background-color: white;
+  &.sexy{
+    margin: 0 -15px 15px;
+    background-color: #fafafa;
+  }
 
-  &:before{
+  &.sexy:before{
     content: "Chosen Filters:";
     position: absolute;
     top: 15px;
@@ -163,7 +169,6 @@ $logo-green: #39b54a;
     padding-left: 4px;
     vertical-align: top;
   }
-
 
 
   &.red{

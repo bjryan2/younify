@@ -47,11 +47,10 @@
 
 .btn-start{
 
-  height: 55px;
   border-radius: 7.5px;
   margin: 0 auto;
   background-color: #42a7f6;
-  width: 100%;
+  width: 50%;
   color: white;
   border-color: #6ec4ff;
 
@@ -61,4 +60,12 @@
   }
 }
 
+form{
+  & header {
+    text-align: center;
+    padding: 25px;
+    font-size: 36px;
+  }
 
+
+}

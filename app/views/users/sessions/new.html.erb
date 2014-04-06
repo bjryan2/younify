@@ -1,17 +1,24 @@
-<h2>Sign in</h2>
+<%= render "shared/navbar" %>
 
-<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, :autofocus => true %></div>
+<div class="container">
 
-  <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
+  <div class="content">
 
-  <% if devise_mapping.rememberable? -%>
-    <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
-  <% end -%>
+    <article class="card signin-dash">
 
-  <div><%= f.submit "Sign in" %></div>
-<% end %>
+      <section class="card card-full oauth-cards">
+       <header>Sign up
+      </header>
 
-<%= render "users/shared/links" %>
+        <section class="errors">
+        <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+        <%= devise_error_messages! %>
+        <% end %>
+      </section>
+
+      <%= render "users/shared/links" %>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac elementum nisi. Proin at accumsan leo. Nulla pharetra rhoncus metus, sed egestas massa malesuada ac. Nunc sem sapien, consequat ac placerat at, varius nec augue. Duis justo neque, mattis nec suscipit in, lobortis vehicula enim. Nunc ut posuere dolor. Nullam sagittis neque velit, sit amet egestas augue rhoncus ut. Phasellus ultricies neque at quam placerat auctor. Aenean ac eros quis neque semper tempus id in orci. Quisque id mattis lorem. Duis adipiscing neque a purus consectetur, pharetra interdum massa aliquam. Sed nec rutrum nisl. Quisque lobortis orci ac porttitor aliquet. Duis luctus ultricies varius.</p>
+    </section>
+  </article>
+</div>
+</div>

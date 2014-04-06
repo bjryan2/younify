@@ -1,0 +1,40 @@
+.signin-dash{
+
+  header{
+    font-size: 3.3rem;
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  p{
+    margin: 25px 0;
+    padding: 25px;
+  }
+
+
+}
+
+.card-full {
+  padding: 1.5rem 0 !important;
+}
+
+
+.links{
+  margin: 25px;
+}
+
+.btn{
+
+  &.btn-login{
+    background-color: $logo-blue;
+    color: white;
+    border-radius: 7.5px;
+    width: 60%;
+    height: 55px;
+    margin: 10px auto;
+  }
+}
+
+.errors {
+  margin-bottom: 50px;
+}
