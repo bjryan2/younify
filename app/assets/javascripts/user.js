@@ -2,7 +2,7 @@ var ready;
 
 ready = function() {
  $('#tokenfield')
-  .on('tokenfield:preparetoken', function (e) {
+ .on('tokenfield:preparetoken', function (e) {
     //cycle through classes for
     var classes = ['red', 'blue', 'teal', 'green'];
 
@@ -13,9 +13,27 @@ ready = function() {
     $('#tokenfield').children('.token').last().addClass(str);
   }).tokenfield({});
  $('.fa-envelope-o.fa-2x').click(function(){
-    $('#myModal').modal();
-  });
+  $('#myModal').modal();
+});
 
+
+//editable text form code
+
+
+$('.bio-text').editable('http://www.example.com/save.php', {
+ id   : 'elementid',
+ name : 'newvalue'
+});
+
+$('.goals-text').editable('http://www.example.com/save.php', {
+ id   : 'elementid',
+ name : 'newvalue'
+});
+
+$('.edu-text').editable('http://www.example.com/save.php', {
+ id   : 'elementid',
+ name : 'newvalue'
+});
 
 };
 
