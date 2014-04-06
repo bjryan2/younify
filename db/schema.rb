@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 20140406082116) do
     t.integer  "match_base_question_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "answer"
+    t.boolean  "answer"
   end
 
   create_table "match_base_questions", force: true do |t|
@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(version: 20140406082116) do
     t.datetime "updated_at"
   end
 
-  add_index "recommenders", ["user_id"], name: "index_recommenders_on_user_id"
+  add_index "recommenders", ["user_id"], name: "index_recommenders_on_user_id", using: :btree
 
   create_table "sessions", force: true do |t|
     t.string   "session_id", null: false
@@ -59,8 +59,8 @@ ActiveRecord::Schema.define(version: 20140406082116) do
     t.datetime "updated_at"
   end
 
-  add_index "sessions", ["session_id"], name: "index_sessions_on_session_id", unique: true
-  add_index "sessions", ["updated_at"], name: "index_sessions_on_updated_at"
+  add_index "sessions", ["session_id"], name: "index_sessions_on_session_id", unique: true, using: :btree
+  add_index "sessions", ["updated_at"], name: "index_sessions_on_updated_at", using: :btree
 
   create_table "user_recommendations", force: true do |t|
     t.string   "content"
@@ -71,8 +71,8 @@ ActiveRecord::Schema.define(version: 20140406082116) do
     t.datetime "updated_at"
   end
 
-  add_index "user_recommendations", ["recommender_id"], name: "index_user_recommendations_on_recommender_id"
-  add_index "user_recommendations", ["user_id"], name: "index_user_recommendations_on_user_id"
+  add_index "user_recommendations", ["recommender_id"], name: "index_user_recommendations_on_recommender_id", using: :btree
+  add_index "user_recommendations", ["user_id"], name: "index_user_recommendations_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "first_name"
@@ -103,8 +103,8 @@ ActiveRecord::Schema.define(version: 20140406082116) do
     t.datetime "resume_updated_at"
   end
 
-  add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
 end
