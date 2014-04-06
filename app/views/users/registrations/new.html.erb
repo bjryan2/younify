@@ -1,18 +1,27 @@
-<h2>Sign up</h2>
+<div class="container">
 
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+  <div class="content">
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, :autofocus => true %></div>
+    <article class="card signin-dash">
 
-  <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
 
-  <div><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></div>
+      <header>
+        <h1>Sign up</h1>
+      </header>
 
-  <div><%= f.submit "Sign up" %></div>
-<% end %>
 
-<%= render "users/shared/links" %>
+      <section class="errors">
+        <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+        <%= devise_error_messages! %>
+        <% end %>
+      </section>
+
+      <section class="card oauth-cards links">
+        <%= render "users/shared/links" %>
+
+      </section>
+
+
+    </article>
+  </div>
+</div>
