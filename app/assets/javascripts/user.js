@@ -3,9 +3,14 @@ var ready;
 ready = function() {
  $('#tokenfield').tokenfield({});
 
- $('#tokenfield-profile').tokenfield({});
+ $('#tokenfield-profile').tokenfield({
+  tokens: ['Google', 'Facebook', 'Apple', 'Coinbase'],
+  limit: 5
+ });
+
  $('.fa-envelope-o.fa-2x').click(function(){
   $('#myModal').modal();
+
 });
 
 
@@ -33,4 +38,4 @@ $('.edu-text').editable('http://www.example.com/save.php', {
 };
 
 $(document).ready(ready);
-//$(document).on('page:load', ready);
+$(document).on('page:load', ready);
